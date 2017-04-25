@@ -1,0 +1,76 @@
+id: migrate_remote_civicrm
+source:
+  # the migrate_drupal_d8 provides this
+  plugin: d8_user
+  high_water_property:
+    name: changed
+  constants:
+    json: 1
+    contact_type: Individual
+    # url: filled from the migrate_remote_destination.settings config object
+    # api_key: filled from the migrate_remote_destination.settings config object
+    # key: filled from the migrate_remote_destination.settings config object
+process:
+  contact_type: constants/contact_type
+  url: constants/url
+  api_key: constants/api_key
+  key: constants/key
+  json: constants/json
+  display_name: name
+  email: mail
+  # add fields to taste.  
+destination:
+  plugin: migrate_remote
+  url_property: url
+  ids:
+    id:
+      type: string
+  fields:
+    contact_type: contact_type
+    contact_sub_type: contact_sub_type
+    do_not_email: do_not_email
+    do_not_phone: do_not_phone
+    do_not_mail: do_not_mail
+    do_not_sms: do_not_sms
+    do_not_trade: do_not_trade
+    is_opt_out: is_opt_out
+    legal_identifier: legal_identifier
+    external_identifier: external_identifier
+    sort_name: sort_name
+    display_name: display_name
+    nick_name: nick_name
+    legal_name: legal_name
+    image_URL: image_URL
+    preferred_communication_method: preferred_communication_method
+    preferred_language: preferred_language
+    preferred_mail_format: preferred_mail_format
+    source: source
+    first_name: first_name
+    middle_name: middle_name
+    last_name: last_name
+    prefix_id: prefix_id
+    suffix_id: suffix_id
+    formal_title: formal_title
+    communication_style_id: communication_style_id
+    email_greeting_id: email_greeting_id
+    email_greeting_custom: email_greeting_custom
+    email_greeting_display: email_greeting_display
+    postal_greeting_id: postal_greeting_id
+    postal_greeting_custom: postal_greeting_custom
+    postal_greeting_display: postal_greeting_display
+    addressee_id: addressee_id
+    addressee_custom: addressee_custom
+    addressee_display: addressee_display
+    job_title: job_title
+    gender_id: gender_id
+    birth_date: birth_date
+    is_deceased: is_deceased
+    deceased_date: deceased_date
+    household_name: household_name
+    primary_contact_id: primary_contact_id
+    organization_name: organization_name
+    sic_code: sic_code
+    user_unique_id: user_unique_id
+    employer_id: employer_id
+    api_key: api_key
+    key: key

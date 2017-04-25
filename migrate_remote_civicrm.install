@@ -1,0 +1,14 @@
+<?php
+
+function migrate_remote_civicrm_install() {
+  $constants = ['url' => '', 'api_key' => '', 'key' => ''];
+  \Drupal::service('config.factory')->getEditable('migrate_remote_destination.settings')
+    ->set('migrate_remote_civicrm', ['source' => ['constants' => $constants]])
+    ->save();
+}
+
+function migrate_remote_civicrm_uninstall() {
+  \Drupal::service('config.factory')->getEditable('migrate_remote_destination.settings')
+    ->clear('migrate_remote_civicrm')
+    ->save();
+}

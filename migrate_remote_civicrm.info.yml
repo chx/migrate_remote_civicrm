@@ -1,0 +1,8 @@
+type: module
+name: Drupal 8 to remote CiviCRM migration
+description: Migration YAML example for a remote CiviCRM
+package: Migration
+core: 8.x
+dependencies:
+  - migrate_remote_destination
+  - migrate_drupal_d8
