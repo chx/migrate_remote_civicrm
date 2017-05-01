@@ -1,4 +1,4 @@
-id: migrate_remote_civicrm
+id: migrate_remote_civicrm_user
 source:
   # the migrate_drupal_d8 provides this
   plugin: d8_user
@@ -17,6 +17,11 @@ process:
   api_key: constants/api_key
   key: constants/key
   json: constants/json
+  id:
+    plugin: migration
+    migration: migrate_remote_civicrm_user
+    source: uid
+    no_stub: true
   display_name: name
   email: mail
   # add fields to taste.
