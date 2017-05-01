@@ -7,7 +7,8 @@ source:
   constants:
     json: 1
     contact_type: Individual
-    # url: filled from the migrate_remote_destination.settings config object
+    # url: filled from the migrate_remote_destination.settings config object.
+    # should look like http://.../civicrm/extern/rest.php?entity=contact&action=create
     # api_key: filled from the migrate_remote_destination.settings config object
     # key: filled from the migrate_remote_destination.settings config object
 process:
@@ -18,7 +19,7 @@ process:
   json: constants/json
   display_name: name
   email: mail
-  # add fields to taste.  
+  # add fields to taste.
 destination:
   plugin: migrate_remote
   url_property: url
